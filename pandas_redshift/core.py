@@ -48,9 +48,9 @@ def mask_aws_credentials(s):
     return s
 
 
-def connect_to_redshift(dbname, host, user, port=5439, **kwargs):
+def connect_to_redshift(database, host, user, port=5439, **kwargs):
     global connect, cursor
-    connect = psycopg2.connect(dbname=dbname,
+    connect = psycopg2.connect(dbname=database,
                                host=host,
                                port=port,
                                user=user,
